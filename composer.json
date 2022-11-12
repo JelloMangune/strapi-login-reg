@@ -1,0 +1,17 @@
+{
+    "name": "jello/strapi-reg-login",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JelloMangune",
+            "email": "mangune.jello@auf.edu.ph"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
