@@ -1,33 +1,3 @@
-<?php
-
-include "vendor/autoload.php";
-
-use App\AuthClient;
-
-$client = new AuthClient();
-
-$identifier = $_POST['identifier'];
-$password = $_POST['password'];
-
-
-try{
-    if(isset($_POST['identifier'])){
-        $response = $client->login($identifier, $password);
-        // var_dump($result->getStatusCode());
-        // var_dump($result->getReasonPhrase());
-        // var_dump($result->getProtocolVersion());
-        $decoded_response = json_decode($response->getBody()->getContents());
-        $data = $decoded_response->user;
-        }
-    else{
-        echo "<script>window.location.href='login.php';</script>";
-    }
-}
-catch (Exception $e) {
-    echo  $e->getMessage();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,8 +22,8 @@ catch (Exception $e) {
 								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
-												<h2>Welcome Back <?= $data->username ?></h2>
-                      							<h4 class="mb-0 mt-4 text-center">Email: <?= $data->email ?></h4>
+												<h2>Welcome Back Sample123!</h2>
+                      							<h4 class="mb-0 mt-4 text-center">Email: Sample123@gmail.com</h4>
                                             	<a href="login-form.php" class="btn mt-5">Logout</a>
 				      					</div>
 			      					</div>
